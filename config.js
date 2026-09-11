@@ -1,6 +1,6 @@
 // Configurações públicas. Nunca coloque senhas, tokens ou chaves neste arquivo.
 window.R15_CONFIG = {
-  whatsappNumber: '5548996613129',
+  whatsappNumber: '559684300164',
   groupName: 'R15 Santa Catarina',
   social: {
     whatsapp: 'https://chat.whatsapp.com/HDjiV1E7yswF9a8bobhITj',
