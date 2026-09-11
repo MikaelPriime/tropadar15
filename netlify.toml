@@ -1,0 +1,42 @@
+functionsDirectory = "D:\\r15-santa-catarina\\netlify\\functions"
+functionsDirectoryOrigin = "config-v1"
+headersOrigin = "config"
+plugins = []
+redirects = []
+
+[build]
+publish = "D:\\r15-santa-catarina"
+publishOrigin = "config"
+functions = "D:\\r15-santa-catarina\\netlify\\functions"
+
+  [build.environment]
+
+  [build.processing]
+
+    [build.processing.css]
+
+    [build.processing.html]
+
+    [build.processing.images]
+
+    [build.processing.js]
+
+  [build.services]
+
+[functions]
+
+  [functions."*"]
+  node_bundler = "esbuild"
+
+[[headers]]
+for = "/admin.html"
+
+  [headers.values]
+  X-Robots-Tag = "noindex, nofollow"
+  Cache-Control = "no-store"
+
+[[headers]]
+for = "/api/*"
+
+  [headers.values]
+  Cache-Control = "no-store"

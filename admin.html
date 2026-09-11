@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Agenda · Administração R15 SC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <script defer src="admin.js"></script>
+</head>
+<body>
+  <header class="admin-header"><a href="index.html" aria-label="Voltar ao site"><strong>R<span>15</span></strong><small>SANTA CATARINA</small></a><span>PAINEL DA AGENDA</span></header>
+  <main>
+    <section class="login-panel" id="login-panel">
+      <p class="eyebrow">ACESSO RESTRITO</p><h1>Administração<br /><em>da tropa.</em></h1><p>Entre para criar, editar e remover os eventos exibidos no site.</p>
+      <form id="login-form"><label for="admin-password">Senha administrativa</label><input id="admin-password" type="password" required autocomplete="current-password" placeholder="Digite sua senha" /><button type="submit">ENTRAR NO PAINEL →</button><p id="login-status" role="status"></p></form>
+    </section>
+    <section class="dashboard" id="dashboard" hidden>
+      <div class="dashboard-top"><div><p class="eyebrow">AGENDA COMPARTILHADA</p><h1>Eventos da tropa.</h1><p>As alterações salvas aqui aparecem no site para todos.</p></div><div class="dashboard-actions"><a href="index.html#eventos" target="_blank">VER AGENDA ↗</a><button type="button" id="logout">SAIR</button></div></div>
+      <div class="admin-grid">
+        <form class="event-form" id="event-form">
+          <div class="form-title"><h2 id="form-title">Novo evento</h2><button type="button" id="cancel-edit" hidden>Cancelar edição</button></div>
+          <input type="hidden" id="event-id" />
+          <label>Título do evento *<input id="event-title" required maxlength="90" placeholder="Ex.: Rolê da Serra" /></label>
+          <div class="field-row"><label>Data *<input id="event-date" type="date" required /></label><label>Horário<input id="event-time" type="time" /></label></div>
+          <div class="field-row"><label>Tipo<input id="event-type" maxlength="40" placeholder="Rolê, encontro…" /></label><label>Cidade<input id="event-city" maxlength="70" placeholder="Florianópolis / SC" /></label></div>
+          <label>Ponto de encontro<input id="event-place" maxlength="100" placeholder="Nome ou endereço do local" /></label>
+          <label>Descrição<textarea id="event-description" maxlength="500" rows="4" placeholder="Informações importantes, trajeto e orientações"></textarea><small id="description-count">0 / 500</small></label>
+          <label>Imagem <span>(opcional)</span><input id="event-image" type="url" maxlength="500" placeholder="https://…" /><small>Use uma URL HTTPS de imagem.</small></label>
+          <button class="save-button" type="submit">SALVAR EVENTO →</button><p class="form-status" id="event-status" role="status"></p>
+        </form>
+        <section class="event-manager"><div class="manager-heading"><h2>Eventos publicados</h2><span id="event-total">0 eventos</span></div><div id="admin-events" class="admin-events"><p class="empty-admin">Carregando eventos…</p></div></section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
